@@ -63,6 +63,6 @@
         "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
     },
     "exclude": [
-        "./node_modules", "dist", "bin"  
+        "./node_modules", "dist", "bin", "webpack.config.ts"  
     ] 
   }
