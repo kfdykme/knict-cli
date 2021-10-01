@@ -1,0 +1,4 @@
+.knict-cli/
+
+dist
+node_modules

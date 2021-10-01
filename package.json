@@ -1,0 +1,17 @@
+{
+  "name": "knict-cli",
+  "version": "0.0.1",
+  "description": "cli tool helper by knict",
+  "main": "index.js",
+  "author": "kfdykme",
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "rm -rf ./dist && tsc",
+    "run:dev": "yarn build:dev && node ./dist/test/test.js"
+  },
+  "dependencies": {
+    "@types/prompt": "^1.1.1",
+    "knict": "file:../knict",
+    "prompt": "^1.2.0"
+  }
+}
