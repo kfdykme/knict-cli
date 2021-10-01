@@ -1,4 +1,4 @@
-import * as KnictCli from '../src/index'
+import * as KnictCli from '../index'
 
 
 

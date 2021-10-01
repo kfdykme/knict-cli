@@ -1,5 +1,12 @@
-export { Knict } from 'knict'
-export { CliClientBuilder } from './client/CliClientBuilder'
-export * as Demo from './demo/BasicCliService'
+import { Knict } from 'knict'
+import { CliClientBuilder } from './client/CliClientBuilder'
+import * as Demo from './demo/BasicCliService'
 
-export * as CliMethod from './method/CliMethod'
+import * as CliMethod from './method/CliMethod'
+
+export {
+    Knict,
+    CliClientBuilder,
+    Demo,
+    CliMethod
+}
