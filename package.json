@@ -6,7 +6,6 @@
     "author": "kfdykme",
     "license": "MIT",
     "scripts": {
-        "install": "npm run build:dev",
         "build:dev": "rm -rf ./dist && tsc",
         "webpack": "webpack --config webpack.config.ts",
         "build": "rm -rf ./dist && tsc && rm -rf ./bin/* && mkdir -p ./bin && cp -r ./dist/* ./bin",
