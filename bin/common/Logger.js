@@ -1,13 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logger = void 0;
-const isLogOpen = false;
+let isLogOpen = false;
 const logger = (() => {
+    let f;
     if (isLogOpen) {
-        return console;
+        f = console;
     }
     else {
-        return { log: () => { }, info: () => { }, error: () => { } };
+        f = { log: () => { }, info: () => { }, error: () => { } };
     }
+    const toggle = () => {
+        isLogOpen = !isLogOpen;
+    };
+    return Object.assign({ toggle }, f);
 })();
 exports.logger = logger;

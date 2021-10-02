@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "@types/prompt": "^1.1.1",
-        "knict": "^0.1.11",
+        "knict": "^0.2.2",
         "prompt": "^1.2.0",
         "util": "^0.12.4"
     },

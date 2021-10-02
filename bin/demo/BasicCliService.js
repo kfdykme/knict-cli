@@ -52,5 +52,4 @@ __decorate([
     __metadata("design:returntype", Object)
 ], BasicCliService.prototype, "login", null);
 exports.BasicCliService = BasicCliService;
-knict_1.Knict.builder(new CliClientBuilder_1.CliClientBuilder());
-exports.basicCliService = knict_1.Knict.create(new BasicCliService());
+exports.basicCliService = knict_1.Knict.builder(new CliClientBuilder_1.CliClientBuilder()).create(new BasicCliService());

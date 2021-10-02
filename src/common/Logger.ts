@@ -1,10 +1,18 @@
-const isLogOpen = false
+let isLogOpen = false
 
 const logger: any = (() => {
+    let f:any 
     if (isLogOpen) {
-        return console
+        f = console
     } else {
-        return { log: () => { }, info: () => { }, error: () => { } }
+        f = { log: () => { }, info: () => { }, error: () => { } }
+    }
+    const toggle = () => {
+        isLogOpen = !isLogOpen
+    }
+    return {
+        toggle,
+        ...f
     }
 })()
 

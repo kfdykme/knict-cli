@@ -19,7 +19,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CliMethod = exports.Demo = exports.CliClientBuilder = exports.Knict = void 0;
+exports.toggleLog = exports.CliMethod = exports.Demo = exports.CliClientBuilder = exports.Knict = void 0;
 const knict_1 = require("knict");
 Object.defineProperty(exports, "Knict", { enumerable: true, get: function () { return knict_1.Knict; } });
 const CliClientBuilder_1 = require("./client/CliClientBuilder");
@@ -28,3 +28,6 @@ const Demo = __importStar(require("./demo/BasicCliService"));
 exports.Demo = Demo;
 const CliMethod = __importStar(require("./method/CliMethod"));
 exports.CliMethod = CliMethod;
+const Logger_1 = require("./common/Logger");
+const toggleLog = Logger_1.logger.toggle;
+exports.toggleLog = toggleLog;

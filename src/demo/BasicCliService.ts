@@ -13,6 +13,6 @@ export class BasicCliService {
     }
 }
 
-Knict.builder(new CliClientBuilder())
 
-export const basicCliService = Knict.create(new BasicCliService())
+
+export const basicCliService = Knict.builder(new CliClientBuilder()).create(new BasicCliService())

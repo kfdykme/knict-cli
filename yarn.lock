@@ -831,10 +831,10 @@ kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-knict@^0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/knict/-/knict-0.1.11.tgz#be2b9894c956524ad34ff6b2f101269032a200a5"
-  integrity sha512-aP86JMcMJz6QE9pz1JMAbayxAfx14UyY+MkKZt5juLCTWumBoOvxzGQpGd7lCqhStahAZeb8DmSX8p/gEw0t7Q==
+knict@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/knict/-/knict-0.2.2.tgz#2925bddb598361597bd84f9e968a515b3bb3be87"
+  integrity sha512-JxWBQ+5a8BpqW9z5YUxiuTf3bRVp2QwD09raNgyLucjBdBQgtRm9hlDk85kuVTeP23KZIDP8eIqMRtnIKXpE9Q==
   dependencies:
     reflect-metadata "^0.1.13"
 
