@@ -1,5 +1,4 @@
 .knict-cli/
 
-bin
 dist
 node_modules
