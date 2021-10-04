@@ -59,7 +59,7 @@ function Password(name: string) {
     }
 }
 
-function Choise(name: string) {
+function Choice(name: string) {
     logger.log('Knict Choise(): evaluated')
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         let targetMethod = target[propertyKey]
@@ -80,5 +80,5 @@ export {
     Input,
     Str,
     Password,
-    Choise
+    Choice
 }

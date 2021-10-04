@@ -12,13 +12,9 @@ export class BasicCliService {
         }
     }
 
-    @CliMethod.Choise('home')
-    home(message1: string, message2 :string, message3 :string):any {
-        return {
-            message1,
-            message2,
-            message3
-        }
+    @CliMethod.Choice('home')
+    home(...args: string[]):any {
+        return args
     }
 }
 

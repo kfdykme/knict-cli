@@ -42,12 +42,8 @@ class BasicCliService {
             password: ''
         };
     }
-    home(message1, message2, message3) {
-        return {
-            message1,
-            message2,
-            message3
-        };
+    home(...args) {
+        return args;
     }
 }
 __decorate([
@@ -59,9 +55,9 @@ __decorate([
     __metadata("design:returntype", Object)
 ], BasicCliService.prototype, "login", null);
 __decorate([
-    CliMethod.Choise('home'),
+    CliMethod.Choice('home'),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String, String]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Object)
 ], BasicCliService.prototype, "home", null);
 exports.BasicCliService = BasicCliService;
