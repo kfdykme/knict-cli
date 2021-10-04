@@ -9,6 +9,7 @@ const main = (async () => {
 
     const { basicCliService } = Demo
     
-    const res = await  basicCliService.login('', '')
+    // const res = await  basicCliService.login('', '')
+    const res = await basicCliService.home('reply', 'post', 'hot')
     console.info(res)
 })()

@@ -42,6 +42,13 @@ class BasicCliService {
             password: ''
         };
     }
+    home(message1, message2, message3) {
+        return {
+            message1,
+            message2,
+            message3
+        };
+    }
 }
 __decorate([
     CliMethod.Input(),
@@ -51,5 +58,11 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Object)
 ], BasicCliService.prototype, "login", null);
+__decorate([
+    CliMethod.Choise('home'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String, String]),
+    __metadata("design:returntype", Object)
+], BasicCliService.prototype, "home", null);
 exports.BasicCliService = BasicCliService;
 exports.basicCliService = knict_1.Knict.builder(new CliClientBuilder_1.CliClientBuilder()).create(new BasicCliService());

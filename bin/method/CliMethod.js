@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Password = exports.Str = exports.Input = void 0;
+exports.Choise = exports.Password = exports.Str = exports.Input = void 0;
 const Logger_1 = require("../common/Logger");
 function Input() {
     Logger_1.logger.log('Knict GET(): evaluated');
@@ -51,3 +51,16 @@ function Password(name) {
     };
 }
 exports.Password = Password;
+function Choise(name) {
+    Logger_1.logger.log('Knict Choise(): evaluated');
+    return function (target, propertyKey, descriptor) {
+        let targetMethod = target[propertyKey];
+        if (targetMethod !== undefined && targetMethod instanceof Function) {
+            targetMethod.knict = Object.assign(Object.assign({}, targetMethod.knict), { name: propertyKey, cli: {
+                    method: 'chiose'
+                } });
+        }
+        Logger_1.logger.log('Knict Choise(): called', target, propertyKey, descriptor);
+    };
+}
+exports.Choise = Choise;

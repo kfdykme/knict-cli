@@ -35,6 +35,7 @@ exports.CliClientBuilder = void 0;
 const knict_1 = require("knict");
 const Logger_1 = require("../common/Logger");
 const prompt_1 = __importDefault(require("prompt"));
+const inquirer_1 = __importDefault(require("inquirer"));
 const Storage = __importStar(require("../storage"));
 class CliClientBuilder extends knict_1.KnictBasicClientBuilder {
     build(k) {
@@ -48,7 +49,8 @@ class CliClientBuilder extends knict_1.KnictBasicClientBuilder {
                     req.push({
                         name: x,
                         default: value,
-                        index: k.data.str[x]
+                        index: k.data.str[x],
+                        type: 'input'
                     });
                 }
                 for (let x in k.data.pwd) {
@@ -58,7 +60,8 @@ class CliClientBuilder extends knict_1.KnictBasicClientBuilder {
                         default: value,
                         index: k.data.pwd[x],
                         hidden: true,
-                        replace: '*'
+                        replace: '*',
+                        type: 'password'
                     });
                 }
                 req.sort((a, b) => a.index - b.index);
@@ -66,10 +69,27 @@ class CliClientBuilder extends knict_1.KnictBasicClientBuilder {
                 prompt_1.default.start({
                     message: 'knict-cli'
                 });
-                res = yield prompt_1.default.get(req);
+                // res = await prompt.get(req)
+                res = yield inquirer_1.default.prompt(req);
                 for (let x in res) {
                     Storage.set(x, res[x]);
                 }
+            }
+            else if (k.cli.method === 'chiose') {
+                const req = [];
+                const choices = [];
+                for (let x in k.args) {
+                    choices.push({
+                        name: k.args[x],
+                        message: k.args[x]
+                    });
+                }
+                req.push({
+                    name: k.name,
+                    type: 'list',
+                    choices: choices
+                });
+                res = yield inquirer_1.default.prompt(req);
             }
             return res;
         }))();
