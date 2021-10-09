@@ -33,6 +33,6 @@ const main = (() => __awaiter(void 0, void 0, void 0, function* () {
     const { Knict, CliClientBuilder, Demo, CliMethod } = KnictCli;
     const { basicCliService } = Demo;
     // const res = await  basicCliService.login('', '')
-    const res = yield basicCliService.home('reply', 'post', 'hot');
+    const res = yield basicCliService.home(); //'reply', 'post', 'hot')
     console.info(res);
 }))();

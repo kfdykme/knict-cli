@@ -56,10 +56,10 @@ export class CliClientBuilder extends KnictBasicClientBuilder {
             } else if (k.cli.method === 'chiose') {
                 const req: any[ ]= []
                 const choices: any[ ]= []
-                for(let x in k.args) {
+                for(let x in k.data.chioces) {
                     choices.push({
-                        name: k.args[x],
-                        message: k.args[x]
+                        name:  k.data.chioces[x],
+                        message:  k.data.chioces[x]
                     })
                 }
                 req.push({

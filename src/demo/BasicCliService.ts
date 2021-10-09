@@ -12,9 +12,9 @@ export class BasicCliService {
         }
     }
 
-    @CliMethod.Choice('home')
-    home(...args: string[]):any {
-        return args
+    @CliMethod.Choice('home', ['Show New Reply Posts','Show New Publish Posts', 'Show Hot Posts'])
+    home():any {
+        return {}
     }
 }
 

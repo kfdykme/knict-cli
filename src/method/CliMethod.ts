@@ -59,7 +59,7 @@ function Password(name: string) {
     }
 }
 
-function Choice(name: string) {
+function Choice(name: string, choices: string[]) {
     logger.log('Knict Choise(): evaluated')
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         let targetMethod = target[propertyKey]
@@ -70,6 +70,13 @@ function Choice(name: string) {
                 cli: {
                     method: 'chiose'
                 }
+            }
+
+            if (targetMethod.knict.data == undefined) {
+                targetMethod.knict.data = new Object()
+            }
+            if (targetMethod.knict.data.chioces == undefined) {
+                targetMethod.knict.data.chioces = choices
             }
         }
         logger.log('Knict Choise(): called', target, propertyKey, descriptor)
