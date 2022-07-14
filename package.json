@@ -1,10 +1,11 @@
 {
     "name": "knict-cli",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "cli tool helper by knict",
     "main": "./bin/index.js",
     "author": "kfdykme",
     "license": "MIT",
+    "files": ["bin", "src/test", "src/demo"],
     "scripts": {
         "build:dev": "rm -rf ./dist && tsc",
         "webpack": "webpack --config webpack.config.ts",

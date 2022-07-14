@@ -69,6 +69,24 @@ export class CliClientBuilder extends KnictBasicClientBuilder {
                 })
 
                 res = await inquirer.prompt(req)
+            } else if (k.cli.method === 'mutchiose') {
+
+                const req: any[ ]= []
+                let choices: any[ ]= []
+                for(let x in k.data.mutablechioces) {
+                    const value = k.args[k.data.mutablechioces[x]]
+                    choices = value.map((i:string) => {
+                        return {
+                        name: i, message: i
+                    }})
+                }
+                req.push({
+                    name: k.name,
+                    type: 'list',
+                    choices: choices
+                })
+
+                res = await inquirer.prompt(req)
             }
 
 

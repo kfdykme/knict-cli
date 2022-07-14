@@ -78,10 +78,28 @@ class CliClientBuilder extends knict_1.KnictBasicClientBuilder {
             else if (k.cli.method === 'chiose') {
                 const req = [];
                 const choices = [];
-                for (let x in k.args) {
+                for (let x in k.data.chioces) {
                     choices.push({
-                        name: k.args[x],
-                        message: k.args[x]
+                        name: k.data.chioces[x],
+                        message: k.data.chioces[x]
+                    });
+                }
+                req.push({
+                    name: k.name,
+                    type: 'list',
+                    choices: choices
+                });
+                res = yield inquirer_1.default.prompt(req);
+            }
+            else if (k.cli.method === 'mutchiose') {
+                const req = [];
+                let choices = [];
+                for (let x in k.data.mutablechioces) {
+                    const value = k.args[k.data.mutablechioces[x]];
+                    choices = value.map((i) => {
+                        return {
+                            name: i, message: i
+                        };
                     });
                 }
                 req.push({

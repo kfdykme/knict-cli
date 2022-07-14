@@ -83,9 +83,54 @@ function Choice(name: string, choices: string[]) {
     }
 }
 
+
+function MutableChoice() {
+    logger.log('Knict Choise(): evaluated')
+    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+        let targetMethod = target[propertyKey]
+        if (targetMethod !== undefined && targetMethod instanceof Function) {
+            targetMethod.knict = {
+                ...targetMethod.knict,
+                name: propertyKey,
+                cli: {
+                    method: 'mutchiose'
+                }
+            }
+
+            if (targetMethod.knict.data == undefined) {
+                targetMethod.knict.data = new Object()
+            }
+        }
+        logger.log('Knict Choise(): called', target, propertyKey, descriptor)
+    }
+}
+
+function MutableChoiceList(name: string) {
+    return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
+        let targetMethod = target[propertyKey]
+        if (targetMethod !== undefined && targetMethod instanceof Function) {
+            targetMethod.knict = {
+                ...targetMethod.knict
+            }
+            if (targetMethod.knict.data == undefined) {
+                targetMethod.knict.data = new Object()
+            }
+            if (targetMethod.knict.data.mutablechioces == undefined) {
+                targetMethod.knict.data.mutablechioces = new Object()
+            }
+            targetMethod.knict.data.mutablechioces[name] = parameterIndex
+        }
+        logger.log('Knict MutableChoiceList(): called', target, propertyKey, parameterIndex)
+    }
+}
+
+
+
 export {
     Input,
     Str,
     Password,
-    Choice
+    Choice,
+    MutableChoice,
+    MutableChoiceList
 }
